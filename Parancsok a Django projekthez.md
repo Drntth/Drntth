@@ -12,44 +12,37 @@
 ### Mappastruktúra
 
 ```plaintext
-App / AFP1_Nagy_Project --> Python virtuális környezet mappa
-├── main --> Django projekt mappa
-| ├── main
-| | ├── settings.py --> függőségek hozzáadása
-| | └── urls.py --> elérési út függőségek
-| ├── users --> users oldal, új oldal létrehozása
-| | ├── templates --> html oldalak
-| | | └── all_users.html 
-| | ├── models.py --> adatbázisműveletek (új tábla inicializálása)
-| | ├── urls.py --> elérési út meghatározása
-| | └── views.py --> megjelenítendő html oldal kezelése
-| ├── db.sqlite3 --> adatbázis
-| └── manage.py --> kezeli a webszervert
-├── Scripts
-| └── activate --> belép a Python virtuális környezetbe
-├── .gitignore
+project --> gyökérmappa
+├── project
+| ├── settings.py --> függőségek hozzáadása
+| └── urls.py --> elérési út függőségek
+├── page --> új oldal létrehozása
+| ├── models.py --> adatbázisműveletek (új tábla inicializálása)
+| ├── urls.py --> elérési út meghatározása
+| └── views.py --> megjelenítendő html oldal kezelése
+├── static --> statikus elemek (stílus, képek)
+| ├── css --> stílus oldalak
+| └── img --> képek
+├── templates --> html oldalak
+| ├── base.html --> sablon az oldalakhoz
+| ├── index.html --> főoldal, kiterjeszti a base.html-t
+| ├── register.html
+| └── login.html
+├── db.sqlite3 --> adatbázis
+└── manage.py --> kezeli a webszervert
 └── requirements.txt
-```
-
-```plaintext
-Jelenlegi mappa:
-    App
-    └── AFP1_Nagy_Project
 ```
 
 - `Scripts\activate` _// belép a python virtuális környezetébe_
 
 ```plaintext
 Jelenlegi mappa:
-    App
-    └── AFP1_Nagy_Project
-        └── main
+    project
 ```
 
 - `python manage.py runserver` _// a webszerver elindítása_
   - [http://127.0.0.1:8000/](http://127.0.0.1:8000/) _// webszerver elérése a böngészőben_
-  - [http://127.0.0.1:8000/users/](http://127.0.0.1:8000/uj_oldal_neve/) _//users oldal elérése_
-  - [http://127.0.0.1:8000/uj_oldal_neve/](http://127.0.0.1:8000/uj_oldal_neve/) _// létrehozott új oldal felületének elérése_
+  - [http://127.0.0.1:8000/page/](http://127.0.0.1:8000/uj_oldal_neve/) _// létrehozott új oldal felületének elérése_
 - `Ctrl + C`_// webszerver leállítása_
 - `python manage.py migrate` _// a keletkezett változtatások elmentése, amikor a main mappa valamelyik python fájljában (settings.py) változás keletkezik_
 
@@ -59,62 +52,55 @@ Jelenlegi mappa:
 
 ```plaintext
 Jelenlegi mappa:
-    App
-    └── AFP1_Nagy_Project
-        └── main
+    project
 ```
 
-- `python manage.py startapp uj_oldal_neve` _// új oldal létrehozása, előtte mindig le kell állítani a szervert, majd a tesztelés előtt újra el kell indítani_
+- `python manage.py startapp page` _// új oldal létrehozása, előtte mindig le kell állítani a szervert, majd a tesztelés előtt újra el kell indítani_
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── views.py  --> a html oldal megjelenítése
+    app
+    └── page
+        └── views.py  --> a html oldal megjelenítése
 ```
 
 ```python
 from django.shortcuts import render
 from django.http import HttpResponse
-def uj_oldal_neve(request):
+def page(request):
     return HttpResponse("Új oldal szövege") # az oldal lekérésekor megjelenő szöveg
+    return render(request, 'page.html') # a templates mappában lévő html fájl megjelenítése
 ```
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── urls.py  --> elérési út, manuálisan kell létrehozni a fájlt
+    project
+    └── page
+        └── urls.py  --> elérési út, manuálisan kell létrehozni a fájlt
 ```
 
 ```python
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('uj_oldal_neve/', views.uj_oldal_neve, name='uj_oldal_neve'), # az elérési útvonal megadása
+    path('page/', views.page, name='page'), # az elérési útvonal megadása
 ]
 ```
 
-> ha új oldalt hozunk létre hozzá kell adni az elérési útját az admin felülethez, hogy a böngésző keresősávjába [http://127.0.0.1:8000/uj_oldal_neve/](http://127.0.0.1:8000/uj_oldal_neve/) ilyen alapban rá lehessen keresni és megjelenítse az oldal tartalmát
+> ha új oldalt hozunk létre hozzá kell adni az elérési útját az admin felülethez, hogy a böngésző keresősávjába [http://127.0.0.1:8000/page/](http://127.0.0.1:8000/page/) ilyen alapban rá lehessen keresni és megjelenítse az oldal tartalmát
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── main
-                └── urls.py  --> az előbb létrehozott elérési utak hozzáadása a főprogramhoz
+    project
+    └── project
+        └── urls.py  --> az előbb létrehozott elérési utak hozzáadása a főprogramhoz
 ```
 
 ```python
 from django.contrib import admin
 from django.urls import include, path
 urlpatterns = [
-    path('', include('uj_oldal_neve.urls')), # új elérési út hozzáadása
+    path('', include('page.urls')), # új elérési út hozzáadása
     path('admin/', admin.site.urls),
 ]
 
@@ -124,57 +110,35 @@ urlpatterns = [
 
 ## HTML OLDALAK KEZELÉSE I
 
-> ha az egyes oldalaknak külön html fájlokat akarunk csinálni, akkor az adott oldal mappájába létre kell hozni egy templates mappát ahol elhelyezhetőek a html fájlokat
+> ha az egyes oldalaknak külön html fájlokat akarunk csinálni, akkor a templates mappába kell egy új html fájlt létrehozni
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── templates  --> ezt a mappát létre kell hozni
-                    └── uj_html.html  --> ide kell létrehozni a html oldalakat
+    project --> gyökérmappa
+    └──  templates --> html oldalak
+        ├── base.html --> sablon az oldalakhoz
+        └── page.html --> az új oldal
 ```
 
 ```html
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Létrehoztál egy új oldalt</h1>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quisquam maiores vel, in illo laborum cumque quae voluptate qui dignissimos ut rerum illum, veritatis nobis voluptatum est eligendi, sequi excepturi?</p>
-</body>
-</html>
+{% extends "base.html" %} --> a sablon meghívása
+{% load static %} --> stílus és képek elérése
+
+{% block title %}Cím{% endblock %}
+
+{% block content %} --> html main tartalma
+
+<link rel="stylesheet" href="{% static 'css/page.css' %}" type="text/css"/> --> hivatkozás a saját stílushoz is
+{% endblock %}
 ```
 
-> ebben az esetben meg kell változtatni az adott oldal views.py fájljának tartalmát
+> ezután a main beállításait módosítani kell úgy, hogy érzékelje a page mappát úgy mint egy oldalt
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── views.py 
-```
-
-```python
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
-def uj_oldal_neve(request):
-    template = loader.get_template('uj_oldal_neve.html') # ide kell a templates mappába létrehozott html fájl neve
-    return HttpResponse(template.render())
-```
-
-> ezután a main beállításait módosítani kell úgy, hogy érzékelje az uj_oldal_neve mappát úgy mint egy oldalt
-
-```plaintext
-Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── main
-                └── settings.py  --> az előbb létrehozott elérési utak hozzáadása a főprogramhoz
+    project
+    └── project
+        └── settings.py  --> az előbb létrehozott elérési utak hozzáadása a főprogramhoz
 ```
 
 ```python
@@ -185,11 +149,11 @@ Jelenlegi fájl:
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'uj_oldal_neve', # itt kell hozzáadni az új oldalakat
+        'page', # itt kell hozzáadni az új oldalakat
     ]
 ```
 
-- `python manage.py migrate`
+- `python manage.py migrate` --> változtatások mentése
 
 ## ADATBÁZIS KEZELÉS
 
@@ -197,11 +161,9 @@ Jelenlegi fájl:
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── models.py 
+    project
+    └── page
+        └── models.py 
 ```
 
 ```python
@@ -210,14 +172,13 @@ class tabla_neve(models.Model): # új tábla inicializálása
     szoveg = models.CharField(max_length=255) # attribútumok hozzáadása
     szam = models.IntegerField()
     datum = models.DateField()
-    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE)
+    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE, related_name="hivatkozási név")
     elsodleges_kulcs = models.CharField(max_length=100, primary_key=True) # ha nem adunk meg a rendszer generál egyet automatikusan
     valasztas = models.TextChoices("valaszthato1", "valaszthato2")
 ```
 
-- `python manage.py makemigrations uj_oldal_neve` _// tábla létrehozása az adatbázisban_
+- `python manage.py makemigrations page` _// tábla létrehozása az adatbázisban_
 - `python manage.py migrate` _// módosítások mentése_
-- `python manage.py sqlmigrate uj_oldal_neve 0001` _// SQL parancsok megtekintése (a 0001 az adott változatás, ha másik módosítás SQL parancsait szeretnénk megnézni, akkor az uj_oldal_neve/migrations mappában vannak az adott számú változtatások között)_
 
 #### adatbázis feltöltése elemekkel, ezek módosítása / törlése
 
@@ -228,7 +189,7 @@ class tabla_neve(models.Model): # új tábla inicializálása
 ##### új elemek hozzáadása a táblához
 
 ```shell
->>> from uj_oldal_neve.models import tabla_neve # a tabla_neve tábla importálása
+>>> from page.models import tabla_neve # a tabla_neve tábla importálása
 >>> tabla_neve.objects.all() # létrehoz egy üres tabla_neve táblát
 >>> tabla_eleme = tabla_neve(szoveg='szöveg', szam=123) # egy új elem létrehozása az értékek megadásával
 >>> tabla_eleme.save() # az új elem mentése
@@ -265,11 +226,9 @@ class tabla_neve(models.Model): # új tábla inicializálása
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── models.py 
+    project
+    └── page
+        └── models.py 
 ```
 
 ```python
@@ -278,24 +237,22 @@ class tabla_neve(models.Model):
     szoveg = models.CharField(max_length=255)
     szam = models.IntegerField()
     datum = models.DateField()
-    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE)
+    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE, related_name="hivatkozási név")
     elsodleges_kulcs = models.CharField(max_length=100, primary_key=True) // ha nem adunk meg a rendszer generál egyet automatikusan
     valasztas = models.TextChoices("valaszthato1", "valaszthato2")
     uj_szam = models.IntegerField() # új attribútumok hozzáadása
     uj_datum = models.DateField() # új attribútumok hozzáadása
 ```
 
-- `py manage.py makemigrations uj_oldal_neve` _// új attribútumok hozzáadása esetén elmenti a változtatásokat (ebben az esetbe meg kell adni egy default értéket, de erre fog figyelmeztetni a program, egy választási lehetőséggel ahol a 2 beírása és Enter lenyomása után kell megadni az alapértéket, ha ezt korábban nem tettük meg)_
+- `py manage.py makemigrations page` _// új attribútumok hozzáadása esetén elmenti a változtatásokat (ebben az esetbe meg kell adni egy default értéket, de erre fog figyelmeztetni a program, egy választási lehetőséggel ahol a 2 beírása és Enter lenyomása után kell megadni az alapértéket, ha ezt korábban nem tettük meg)_
 - `2` _// 2. lehetőség kiválasztása, majd Enter_
-- `py manage.py makemigrations uj_oldal_neve`
+- `py manage.py makemigrations page`
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── models.py 
+    project
+    └── page
+        └── models.py 
 ```
 
 ```python
@@ -304,14 +261,14 @@ class tabla_neve(models.Model):
     szoveg = models.CharField(max_length=255)
     szam = models.IntegerField()
     datum = models.DateField()
-    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE)
+    idegen_kulcs = models.ForeignKey(masik_tabla_neve, on_delete=models.CASCADE, related_name="hivatkozási név")
     elsodleges_kulcs = models.CharField(max_length=100, primary_key=True) // ha nem adunk meg a rendszer generál egyet automatikusan
     valasztas = models.TextChoices("valaszthato1", "valaszthato2")
     uj_szam = models.IntegerField(null=True) # az előbb beírt parancsok itt adják hozzá a 'null=True' kiegészítést
     uj_datum = models.DateField(null=True)
 ```
 
-- `python manage.py makemigrations uj_oldal_neve`
+- `python manage.py makemigrations page`
 - `python manage.py migrate`
 // ezután a meglévő mezőket az előzőekben leírtak szerint lehet az adott attribútumokra vonatkozóan feltölteni *1
 
@@ -319,26 +276,26 @@ class tabla_neve(models.Model):
 
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── templates 
-                    └── adatbazis_elemek_kilistazasa  --> ez a html fogja kilistázni az összes elemét az adatbázisnak
+    project --> gyökérmappa
+    └──  templates --> html oldalak
+        ├── base.html --> sablon az oldalakhoz
+        └── page.html --> az új oldal
 ```
 
 ```html
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Adatbázis elemek kilistázása</h1>
-<ul>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Adatbázis elemek kilistázása{% endblock %}
+
+{% block content %}
+
     {% for elem in lista %} <!-- % elemek közé helyezet kód a Django nyelv logikája --> 
         <li>{{ elem.attributum1 }} {{ elem.attributum2 }}</li>
     {% endfor %}
-</ul>
-</body>
-</html>
+
+<link rel="stylesheet" href="{% static 'css/kanban.css' %}" type="text/css"/>
+{% endblock %}
 ```
 
 ```plaintext
@@ -348,19 +305,4 @@ Jelenlegi fájl:
         └── main
             └── uj_oldal_neve
                 └── views.py 
-```
-
-> ezután meg kell változatni a `views.py` fájlban az oldal elérését / importálni kell a táblát
-
-```python
-from django.http import HttpResponse
-from django.template import loader
-from .models import tabla_neve
-def tabla_neve_listazas(request):
-    lista = tabla_neve.objects.all().values()
-    template = loader.get_template('adatbazis_elemek_kilistazasa.html')
-    context = {
-        'lista': lista,
-    }
-    return HttpResponse(template.render(context, request))
 ```
