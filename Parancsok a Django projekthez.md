@@ -298,11 +298,260 @@ Jelenlegi fájl:
 {% endblock %}
 ```
 
+---
+
+# Modellek (Models)
+
+---
+
+Egy modell az adatokról szóló információk egyetlen, meghatározó forrása. Tartalmazza az adattárolás során szükséges alapvető mezőket és viselkedéseket. Általában minden modell egyetlen adatbázis táblához kapcsolódik.
+Az alapok:
++ Minden modell egy Python osztály, ami a django.db.models.Model osztályból származik le.
++ A modell minden attribútuma egy adatbázis mezőt reprezentál.
++ Mindezekkel együtt a Django egy automatikusan generált adatbázis-hozzáférési API-t biztosít; lásd a Lekérdezések készítése részt.
+
 ```plaintext
 Jelenlegi fájl:
-    App
-    └── AFP1_Nagy_Project
-        └── main
-            └── uj_oldal_neve
-                └── views.py 
+    project
+    └── page
+        └── models.py 
 ```
+
+```python
+from django.db import models
+
+class Person(models.Model):
+    # id --> automatikusan generált
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+```
+> A first_name és a last_name a modell mezői. Minden mezőt osztály attribútumként határoznak meg, és minden attribútum egy adatbázis oszlophoz kapcsolódik.
+
+> Amint definiáltad a modelleket, közölnöd kell Djangóval, hogy használni fogod azokat a modelleket. Ezt úgy teheted meg, hogy szerkeszted a beállításfájlt, és a INSTALLED_APPS beállítást módosítod, hogy hozzáadd azon modul nevét, amely tartalmazza a models.py fájlt.
+Például, ha az alkalmazásod modellei a myapp.models modulban találhatóak (ez az a csomagstruktúra, amelyet egy alkalmazásnak a manage.py startapp szkript létrehoz), akkor a INSTALLED_APPS beállításnak így kellene kinéznie:
+
+```plaintext
+Jelenlegi fájl:
+    project
+    └── project
+        └── settings.py 
+```
+
+```python
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'page', # itt kell hozzáadni az új oldalakat
+    ]
+```
+
+- `python manage.py makemigrations` 
+- `python manage.py migrate`
+
+---
+
+## Mezők
+
+A modell legfontosabb része - és az egyetlen kötelező része a modellnek - az adatbázis mezők listája, amelyet definiál. A mezőket osztály attribútumokkal határozzák meg. Ügyelj arra, hogy ne válassz mezőneveket, amelyek ütköznek a modellek API-jával, mint például clean, save vagy delete.
+
+```python
+from django.db import models
+
+class Musician(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    instrument = models.CharField(max_length=100)
+
+
+class Album(models.Model):
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    release_date = models.DateField()
+    num_stars = models.IntegerField()
+```
+
+---
+
+### Mező típusok
+
+A Django számos beépített mezőtípust tartalmaz; a teljes listát megtalálhatod a [modellmező referenciában](https://docs.djangoproject.com/en/5.0/ref/models/fields/#model-field-types). Ha a Django beépített mezői nem megfelelőek, könnyen írhatsz saját mezőket; lásd a [Hogyan lehet saját modellmezőket létrehozni](https://docs.djangoproject.com/en/5.0/howto/custom-model-fields/) című részt.
+
+---
+
+## Modellek több fájlban
+
+Teljesen elfogadott egy modellt összekapcsolni egy másik alkalmazásból származóval. Ehhez importáld a kapcsolódó modellt a fájl tetején, ahol a modellt meghatározod. Ezután hivatkozz a másik modell osztályra, amikor szükséges. Például:
+
+```python
+from django.db import models
+from geography.models import ZipCode
+
+class Restaurant(models.Model):
+    # ...
+    zip_code = models.ForeignKey(
+        ZipCode,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
+```
+
+---
+
+## Modellek szervezése egy csomagba
+
+A manage.py startapp parancs létrehoz egy alkalmazás szerkezetet, amely tartalmaz egy models.py fájlt. Ha sok modell van, akkor hasznos lehet őket külön fájlokban szervezni.
+
+Ahhoz, hogy ezt megtehesd, hozz létre egy models csomagot. Távolítsd el a models.py-t, majd hozz létre egy myapp/models/ könyvtárat egy __init__.py fájllal, valamint a fájlokat, amelyekben tárolni kívánod a modelleket. Importálnod kell a modelleket a __init__.py fájlban.
+
+```plaintext
+Jelenlegi fájl:
+    project --> gyökérmappa
+    └── page --> adott oldal
+        └──  models --> models csomag
+            ├──  organic.py 
+            ├──  synthetic.py  
+            └── __init__.py --> modellek gyűjteménye
+```
+
+Például, ha a models könyvtárban van egy organic.py és egy synthetic.py fájl:
+
+```python
+from .organic import Person
+from .synthetic import Robot
+```
+
+---
+
+## Bővebben a modellekről [itt!](https://docs.djangoproject.com/en/5.0/topics/db/models/)
+
+---
+
+## Lekérdezések Python shell-ben [itt!](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+
+---
+
+## Migrációk (Migrations)
+
+A migrációk a Django egyik módja annak, hogy átvezessék az általad végzett változtatásokat a modellekben (mező hozzáadása, modell törlése stb.) az adatbázis sémaszerkezetébe. Általában automatikusak, de tudnod kell, mikor kell migrációkat készíteni, mikor kell futtatni őket, és milyen gyakori problémákba ütközhetsz.
+
+```django
+python manage.py migrate [app_label] [migration_name]
+python manage.py makemigrations [app_label [app_label ...]]
+python manage.py sqlmigrate app_label migration_name
+python manage.py showmigrations [app_label [app_label ...]]
+```
+
+---
+
+### Migráció visszafordítása
+
+A migrációkat vissza lehet fordítani a migrate paranccsal, azzal hogy megadod az előző migráció számát. Például, ha vissza akarod fordítani a books.0003 migrációt:
+
+```python
+python manage.py migrate books 0002
+```
+
+---
+
+## Használható adatbázisok
+
+Django hivatalosan támogatja az alábbi adatbázisokat:
++ PostgreSQL
++ MariaDB
++ MySQL
++ Oracle
++ SQLite
+
+Ezenkívül számos adatbázis háttérendszer van, amelyeket harmadik felek biztosítanak:
++ CockroachDB
++ Firebird
++ Google Cloud Spanner
++ Microsoft SQL Server
++ Snowflake
++ TiDB
++ YugabyteDB
+
+### PostgreSQL
+
+> A szolgáltatásnév alapján való csatlakozáshoz a kapcsolódási szolgáltatásfájlban található szolgáltatásnevet, valamint a jelszót a jelszófájlból kell megadni. Ehhez meg kell adnod őket az adatbázis konfigurációjának OPTIONS részében a **DATABASES** beállításban:
+
+```plaintext
+Jelenlegi fájl:
+    project
+    └── project
+        └── settings.py
+```
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "OPTIONS": {
+            "service": "my_service",
+            "passfile": ".my_pgpass",
+        },
+    }
+}
+```
+
+> **Szolgáltatásnév**:
+
+```plaintext
+Jelenlegi fájl:
+    %APPDATA%\
+    └── postgresql
+        └── .pg_service.conf 
+```
+
+```conf
+[my_service]
+host=localhost
+user=USER
+dbname=NAME
+port=5432
+```
+
+> **Jelszó**:
+
+```plaintext
+Jelenlegi fájl:
+    %APPDATA%\
+    └── postgresql
+        └── pgpass.conf
+```
+
+```conf
+localhost:5432:NAME:USER:PASSWORD
+```
+
+#### A PostgreSQL konfigurációjának optimalizálása
+
+```plaintext
+Jelenlegi fájl:
+    %APPDATA%\
+    └── postgresql
+        └── postgresql.conf 
+```
+
+A Django számára az alábbi paraméterek szükségesek az adatbázis kapcsolatokhoz:
+
+```conf
+    client_encoding: 'UTF8',
+
+    default_transaction_isolation: alapértelmezés szerint 'read committed', vagy az kapcsolat opciókban beállított érték (lásd alább),
+
+    timezone:
+        amikor a USE_TZ igaz, alapértelmezetten 'UTC', vagy a kapcsolathoz beállított TIME_ZONE érték,
+        amikor a USE_TZ hamis, a globális TIME_ZONE beállítás értéke.
+```
+
+> Bővebben [itt!](https://docs.djangoproject.com/en/5.0/ref/databases/#postgresql-notes)
+
+### MariaDB
+
+> Bővebben [itt!](https://docs.djangoproject.com/en/5.0/ref/databases/#mariadb-notes)
