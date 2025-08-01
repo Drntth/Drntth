@@ -46,7 +46,7 @@ Below you can find a curated list of my public and pinned repositories. Each pro
 
 ## :globe_with_meridians: Find Me Online
 
-- :email: Email: tothdi03@gmail.com
+- :email: Email: <tothdi03@gmail.com>
 - :briefcase: [LinkedIn](https://www.linkedin.com/in/dorina-tóth-045488357/)
 - :desktop_computer: [GitHub](https://github.com/Drntth)
 
