@@ -1,0 +1,64 @@
+@startuml
+!theme spacelab
+
+title Technology Stack
+
+skinparam rectangle {
+  BackgroundColor #f8f9fa
+  BorderColor #007bff
+  FontColor #212529
+  FontSize 16
+  RoundCorner 15
+}
+skinparam shadowing true
+
+rectangle "Languages" as L #e3f2fd {
+  [Python]
+  [C#]
+  [Java]
+  [JavaScript]
+  [SQL]
+  [PHP]
+  [LaTeX]
+  [PL/SQL]
+  [VBA]
+}
+
+rectangle "Frameworks & Libraries" as F #fff3e0 {
+  [Django]
+  [.NET]
+  [Spring Boot]
+  [Laravel]
+  [Bootstrap]
+}
+
+rectangle "Databases" as D #e8f5e9 {
+  [PostgreSQL]
+  [MySQL]
+  [SQLite]
+}
+
+rectangle "DevOps & Tools" as T #f3e5f5 {
+  [Docker]
+  [GitHub Actions]
+  [Bash]
+  [Git]
+  [Trello]
+  [Markdown]
+  [Jupyter Notebook]
+  [PlantUML]
+}
+
+rectangle "Web Technologies" as W #fce4ec {
+  [HTML5]
+  [CSS3]
+  [JavaScript]
+}
+
+L -down-> F : "uses"
+F -down-> D : "connects to"
+F -right-> T : "integrates"
+W -right-> F : "front-end"
+T -down-> D : "manages"
+W -down-> D : "accesses"
+@enduml 
