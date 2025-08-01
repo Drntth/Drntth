@@ -1,0 +1,64 @@
+@startuml
+!theme spacelab
+
+title Technológiai Stack
+
+skinparam rectangle {
+  BackgroundColor #f8f9fa
+  BorderColor #007bff
+  FontColor #212529
+  FontSize 16
+  RoundCorner 15
+}
+skinparam shadowing true
+
+rectangle "Programnyelvek" as L #e3f2fd {
+  [Python]
+  [C#]
+  [Java]
+  [JavaScript]
+  [SQL]
+  [PHP]
+  [LaTeX]
+  [PL/SQL]
+  [VBA]
+}
+
+rectangle "Keretrendszerek és könyvtárak" as F #fff3e0 {
+  [Django]
+  [.NET]
+  [Spring Boot]
+  [Laravel]
+  [Bootstrap]
+}
+
+rectangle "Adatbázisok" as D #e8f5e9 {
+  [PostgreSQL]
+  [MySQL]
+  [SQLite]
+}
+
+rectangle "DevOps és eszközök" as T #f3e5f5 {
+  [Docker]
+  [GitHub Actions]
+  [Bash]
+  [Git]
+  [Trello]
+  [Markdown]
+  [Jupyter Notebook]
+  [PlantUML]
+}
+
+rectangle "Web technológiák" as W #fce4ec {
+  [HTML5]
+  [CSS3]
+  [JavaScript]
+}
+
+L -down-> F : "használja"
+F -down-> D : "kapcsolódik"
+F -right-> T : "integrálódik"
+W -right-> F : "front-end"
+T -down-> D : "kezeli"
+W -down-> D : "eléri"
+@enduml 

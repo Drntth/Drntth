@@ -1,5 +1,7 @@
 # Hi there, I'm Dorina Tóth! :wave:
 
+> :uk: English | [:hungary: Magyar](README.hu.md)
+
 I'm a passionate Software Developer from Hungary, currently working at Eszterházy Károly Catholic University IT Development Department. My main interests are artificial intelligence, machine learning, system design, backend development, and web development.
 
 ## :woman_technologist: About Me
