@@ -25,15 +25,6 @@ A key component of the project is a document conversion pipeline that processes 
 
 ## Main Classes
 
-- `RAGAssistant`: Core assistant logic, model integration, vector search, and Q&A
-- `Main`: Pipeline controller, argument parsing, step execution
-- `DocumentCleaner`: Cleaning DOCX files (headers, footers, TOC, empty, abbreviations, footnotes)
-- `DoclingConverter`: Conversion to Markdown
-- `UnstructuredConverter`: Markdown to JSON conversion
-- `Enrichment`: AI-based table and image summarization
-- `FileService`: File and folder management
-- `Export`: Export enriched JSON to TXT
-
 ## Features
 
 - RAG-based AI assistant for document Q&A
