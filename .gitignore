@@ -1,0 +1,52 @@
+# .gitignore a fejlesztői repóhoz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Virtuális környezetek
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+pip-log.txt
+
+# Jupyter notebook checkpointok
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+.history/
+
+# OS/Editor fájlok
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Képek, ideiglenes vagy generált fájlok (ha nem akarod verziózni)
+# /assets/tmp/
+# /results/
+# /output/
+
+# Node.js (ha van)
+node_modules/
+npm-debug.log
+
+# .env és egyéb érzékeny adatok
+.env
+
+# Egyéb privát vagy temp fájlok
+*.bak
+*.tmp
+
+# Ajánlott: saját build/temp mappák, ha vannak
+# build/
+# dist/
