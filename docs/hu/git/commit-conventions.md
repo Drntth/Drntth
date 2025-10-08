@@ -1,6 +1,6 @@
 # Commit Konvenciók
 
-> :uk: [English](../commit-conventions.md) | :hungary: Magyar
+> :uk: [English](../../git/commit-conventions.md) | :hungary: Magyar
 
 **Cél**: A commit üzenetek egységesítése az átláthatóság és a projekt történetének jobb követhetősége érdekében.
 
