@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Custom Application
+Comment=Launches a custom script or application
+Exec=/path/to/application --parameter1 --parameter2
+Icon=/path/to/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;

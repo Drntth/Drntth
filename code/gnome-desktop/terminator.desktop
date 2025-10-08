@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Terminator
+Comment=Terminal emulator with multiple layouts
+Exec=terminator --layout=own-config
+Icon=terminator
+Terminal=false
+Type=Application
+Categories=Utility;TerminalEmulator;
