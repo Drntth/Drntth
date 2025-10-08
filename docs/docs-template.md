@@ -1,14 +1,36 @@
 # [Technology/Topic Name]
 
+---
+
+> :uk: English | [:hungary: Magyar](hu/)
+
+---
+
 ## Purpose
 
 [Briefly describe the purpose or goal of the technology/topic]
+
+---
 
 ## Key Concepts
 
 - [Concept 1]: [Short description]
 - [Concept 2]: [Short description]
 - [Concept 3]: [Short description]
+
+---
+
+## Installation
+
+- **For Ubuntu**:  
+
+  ```bash
+  sudo apt install ***
+  ```
+
+Other methods...
+
+---
 
 ## Basic Usage
 
@@ -18,12 +40,30 @@
 [Code block or example]
 ```
 
+---
+
+## Shortcuts
+
+Any type of useful keyboard shortcuts.
+
+---
+
 ## Best Practices
+
+---
 
 ## Common Pitfalls
 
 - [Pitfall 1]: [How to avoid]
 - [Pitfall 2]: [How to avoid]
+
+---
+
+## Example Code
+
+You can find example code related to this topic in the [code directory](../code/).
+
+---
 
 ## Sources
 
