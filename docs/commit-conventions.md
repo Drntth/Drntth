@@ -1,6 +1,6 @@
 # Commit Conventions
 
-> :uk: English | [:hungary: Magyar](README.hu.md)
+> :uk: English | [:hungary: Magyar](hu/commit-conventions.md)
 
 **Purpose**: Standardize commit messages for better readability and project history tracking.
 
