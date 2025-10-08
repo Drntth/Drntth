@@ -10,7 +10,7 @@ A frontend a felhasználó által közvetlenül látható és használt része a
 
 - **HTML** - A weboldalak szerkezetének alapja. **HTML** (HyperText Markup Language) adja a weboldalak szerkezetét, tartalmi elemeket (címek, bekezdések, űrlapok, képek, menük) határoz meg. Az újabb HTML5 szabvány szemantikus elemeket is tartalmaz, amelyek javítják az akadálymentességet és a keresőoptimalizálást.
 - **CSS** - Stílusok, megjelenés, reszponzivitás. **CSS** (Cascading Style Sheets) felel a megjelenésért: tipográfia, színek, elrendezés, reszponzivitás (Flexbox, Grid, media query-k), animációk és változók. A modern CSS lehetővé teszi a mobilbarát, látványos felületek kialakítását.
-- **[JavaScript](frontend/javascript.md)** - Interaktivitás, dinamikus tartalom. **JavaScript** teszi dinamikussá a weboldalakat. Segítségével valósul meg az interaktivitás, az űrlapellenőrzés, az aszinkron kommunikáció (AJAX, Fetch API, WebSockets), valamint a frontendes keretrendszerek használata. A modern JavaScript (ES6+) új szintaxist, modulokat, osztályokat és fejlett funkciókat kínál.
+- **[JavaScript](../../frontend/hu/javascript.md)** - Interaktivitás, dinamikus tartalom. **JavaScript** teszi dinamikussá a weboldalakat. Segítségével valósul meg az interaktivitás, az űrlapellenőrzés, az aszinkron kommunikáció (AJAX, Fetch API, WebSockets), valamint a frontendes keretrendszerek használata. A modern JavaScript (ES6+) új szintaxist, modulokat, osztályokat és fejlett funkciókat kínál.
 
 ### Keretrendszerek és könyvtárak
 
@@ -35,8 +35,8 @@ A backend a szerveroldali logikáért, adatkezelésért és üzleti folyamatoké
   - **Ruby on Rails:** Gyors prototípus-készítés, beépített megoldások.
 - **PHP:** Kifejezetten webfejlesztésre tervezett szerveroldali nyelv.  
   - **Laravel:** Modern PHP keretrendszer, elegáns szintaxissal és sok beépített funkcióval.
-- [Node.js](backend/nodejs.md): JavaScript futtatókörnyezet szerveroldalon.  
-  - [Express](backend/express.md): Minimalista, rugalmas keretrendszer API-khoz és webalkalmazásokhoz.
+- [Node.js](../../backend/hu/nodejs.md): JavaScript futtatókörnyezet szerveroldalon.  
+  - **Express**: Minimalista, rugalmas keretrendszer API-khoz és webalkalmazásokhoz.
 - **Java / C#:** Nagyvállalati alkalmazásokhoz, magas biztonság és teljesítmény.  
   - **Spring Boot (Java):** Előre konfigurált, könnyen bővíthető.
   - **.NET (C#):** Microsoft által fejlesztett, nagyvállalati környezetben elterjedt.

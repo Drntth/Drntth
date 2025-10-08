@@ -2,7 +2,7 @@
 
 ---
 
-> :uk: [English](../../ubuntu/terminator-guide.md) | :hungary: Magyar
+> :uk: [English](../en/terminator-guide.md) | :hungary: Magyar
 
 ---
 
@@ -182,7 +182,7 @@ Az alábbiakban egy Terminator konfigurációs fájl példát láthatsz, amely b
 - **Elrendezések**: Egy elrendezés több panellel, beleértve az SSH és Git parancsokat.
 - **Parancsok**: Előre definiált parancsok specifikus munkafolyamatokhoz.
 
-A teljes példakonfigurációs fájlt itt találod: [own-config-1](../../code/terminator/own-config-1).
+A teljes példakonfigurációs fájlt itt találod: [own-config-1](../../../code/terminator/own-config-1).
 
 Íme egy példa arra, hogyan néz ki a Terminator egy egyedi elrendezéssel:
 

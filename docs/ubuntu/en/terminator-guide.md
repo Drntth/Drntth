@@ -2,7 +2,7 @@
 
 ---
 
-> :uk: English | [:hungary: Magyar](../hu/ubuntu/terminator-guide.md)
+> :uk: English | [:hungary: Magyar](../hu/terminator-guide.md)
 
 ---
 
@@ -183,11 +183,11 @@ Below is an example of a Terminator configuration file that demonstrates how to 
 - **Layouts**: A layout with multiple panes, including SSH and Git commands.
 - **Commands**: Predefined commands for specific workflows.
 
-You can find the full example Terminator configuration file in [own-config-1](../code/terminator/own-config-1).
+You can find the full example Terminator configuration file in [own-config-1](../../../code/terminator/own-config-1).
 
 Here is an example of how Terminator looks with a custom layout:
 
-![Terminator Example Layout](../../assets/ubuntu/own-config-1.png)
+![Terminator Example Layout](../../../assets/ubuntu/own-config-1.png)
 
 ### How to Use the Example Configuration
 

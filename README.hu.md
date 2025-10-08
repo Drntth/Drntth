@@ -16,7 +16,7 @@ Gyermekkorom óta lenyűgöz az informatika és a szoftverfejlesztés világa. P
 
 ## :hammer_and_wrench: Készségek
 
-![Technológiai stack](assets/hu/technology-stack.png)
+![Technológiai stack](assets/readme/hu/technology-stack.png)
 
 - **Programnyelvek:** Python, C#, Java, JavaScript, SQL, PHP, LaTeX
 - **Technológiák:** HTML5, CSS3, Bootstrap, Django, .NET, Spring Boot, Laravel, PostgreSQL, MySQL, SQLite, Docker, GitHub Actions, Bash, PlantUML, VBA, Jupyter Notebook, Trello, Markdown
@@ -28,7 +28,7 @@ Az alábbi táblázatban megtalálod a nyilvános és kiemelt repóimat. Minden 
 
 | Projekt neve | Leírás | Link |
 | ------------ | ------ | ---- |
-| thesis-langmodels-project-management | Mesterséges intelligencia webalkalmazásokban | [README megtekintése](./projects/thesis-langmodels-project-management.md) |
+| thesis-langmodels-project-management | Mesterséges intelligencia webalkalmazásokban | [README megtekintése](.) |
 | ... | ... | ... |
 
 ## :mortar_board: Tanulmányok

@@ -2,7 +2,7 @@
 
 ---
 
-> :uk: English | [:hungary: Magyar](../hu/ubuntu/configuring-gnome-desktop-application-launchers.md)
+> :uk: English | [:hungary: Magyar](../hu/configuring-gnome-desktop-application-launchers.md)
 
 ---
 
@@ -74,7 +74,7 @@ No additional installation is required, as `.desktop` file handling is built int
 
 ### Generic Example Launcher
 
-The following is a generic example of a `.desktop` file, named [`example.desktop`](../../code/gnome-desktop/example.desktop), which can be used to create a custom application launcher.
+The following is a generic example of a `.desktop` file, named [`example.desktop`](../../../code/gnome-desktop/example.desktop), which can be used to create a custom application launcher.
 
 To use this file copy it to the `~/.local/share/applications` directory, renaming it to match your desired application name:
 
@@ -94,7 +94,7 @@ Then open the copied file and modify the parameters to suit your application:
 
 ### Terminator Launcher Example
 
-Here is an example [`terminator.desktop`](../../code/gnome-desktop/terminator.desktop) file for launching the Terminator terminal emulator with a specific layout.
+Here is an example [`terminator.desktop`](../../../code/gnome-desktop/terminator.desktop) file for launching the Terminator terminal emulator with a specific layout.
 
 To use copy this file to your folder and change `--layout` name for your own config layout name.
 

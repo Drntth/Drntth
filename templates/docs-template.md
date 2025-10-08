@@ -2,7 +2,7 @@
 
 ---
 
-> :uk: English | [:hungary: Magyar](hu/)
+> :uk: English | [:hungary: Magyar](../hu/)
 
 ---
 
@@ -61,7 +61,7 @@ Any type of useful keyboard shortcuts.
 
 ## Example Code
 
-You can find example code related to this topic in the [code directory](../code/).
+You can find example code related to this topic in the [code directory](../../code/).
 
 ---
 

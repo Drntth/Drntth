@@ -2,7 +2,7 @@
 
 ---
 
-> :uk: English | [:hungary: Magyar](../../ubuntu/configuring-gnome-desktop-application-launchers.md)
+> [:uk: English](../en/configuring-gnome-desktop-application-launchers.md) | :hungary: Magyar
 
 ---
 
@@ -74,7 +74,7 @@ Nincs szükség további telepítésre, mivel a `.desktop` fájlok kezelése be�
 
 ### Általános Példa Indító
 
-Az alábbi egy általános példa egy `.desktop` fájlra, amelynek neve [`example.desktop`](../../code/gnome-desktop/example.desktop), és amely egy egyéni alkalmazásindító létrehozására használható.
+Az alábbi egy általános példa egy `.desktop` fájlra, amelynek neve [`example.desktop`](../../../code/gnome-desktop/example.desktop), és amely egy egyéni alkalmazásindító létrehozására használható.
 
 A fájl használatához másolja azt a `~/.local/share/applications` könyvtárba, és nevezze át a kívánt alkalmazás nevére:
 
@@ -94,7 +94,7 @@ Ezután nyissa meg a másolt fájlt, és módosítsa a paramétereket az alkalma
 
 ### Terminator Indító Példa
 
-Az alábbi egy [`terminator.desktop`](../../code/gnome-desktop/terminator.desktop) fájl példa, amely a Terminator terminál emulátort indítja egy adott elrendezéssel.
+Az alábbi egy [`terminator.desktop`](../../../code/gnome-desktop/terminator.desktop) fájl példa, amely a Terminator terminál emulátort indítja egy adott elrendezéssel.
 
 A fájl használatához másolja azt a saját könyvtárába, és módosítsa a `--layout` paramétert a saját konfigurációs elrendezésének nevére:
 

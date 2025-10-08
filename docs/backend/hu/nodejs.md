@@ -65,13 +65,13 @@ A Node.js telepítésével automatikusan elérhetővé válik az NPM (Node Packa
 
 A Node.js egy eseményvezérelt, nem blokkoló futtatókörnyezet, amely lehetővé teszi a JavaScript kód futtatását böngészőn kívül, főként szerveroldalon. Ellentétben a hagyományos szerveroldali technológiákkal (mint a PHP vagy a Python/Django), a Node.js aszinkron, nem blokkoló feldolgozást kínál, így rendkívül hatékony és jól skálázható valós idejű alkalmazásokhoz. Könnyű architektúrája és egyszálú eseményciklusa révén egyszerre sok párhuzamos kérést képes gyorsan kezelni, ami jelentős teljesítményelőnyt jelent a konkurens szerveroldali megoldásokkal szemben.
 
-![Kliens kérést küld a szervernek](../../../assets/backend/nodejs/works_1.webp)
+![Kliens kérést küld a szervernek](../../../../../assets/backend/nodejs/en/en/works_1.webp)
 *Kép: A kliens-szerver kapcsolatot szemléltető ábra, ahol egy felhasználó (kliens) egy laptopon keresztül küld kérést a szervernek. A kommunikáció irányát egy nyíl és a "Request" felirat jelzi, bemutatva a kliens-szerver architektúra alapjait.*
 
-![Eseménykezelés és eseménysor](../../../assets/backend/nodejs/works_2.webp)
+![Eseménykezelés és eseménysor](../../../../../assets/backend/nodejs/en/en/works_2.webp)
 *Kép: Egy eseményfeldolgozási modellt ábrázoló diagram, amely bemutatja, hogyan kerülnek a kérések az eseménysorba (Event Queue), majd az eseményciklus (Event Loop) dolgozza fel őket, különválasztva a blokkoló és nem blokkoló műveleteket.*
 
-![Blokkoló műveletek és szálkezelés](../../../assets/backend/nodejs/works_3.webp)
+![Blokkoló műveletek és szálkezelés](../../../../../assets/backend/nodejs/en/en/works_3.webp)
 *Kép: Egy folyamatábra, amely szemlélteti, hogyan igényelnek a blokkoló műveletek külön szálat (worker thread), a rendszer hozzárendeli a szálat, elvégzi a munkát, majd visszaadja az eredményt a szálkezelő (Thread Pool) segítségével.*
 
 *Forrás: [GeeksforGeeks - JavaScript Tutorial](https://www.geeksforgeeks.org/node-js/how-node-js-works)*
@@ -87,19 +87,19 @@ A Node.js egy eseményvezérelt, nem blokkoló futtatókörnyezet, amely lehető
 
 A Node.js környezetben a klienskérések hatékony kezelése kulcsfontosságú a gyors és skálázható webalkalmazásokhoz. Amikor egy kliens kapcsolatba lép a webalkalmazással, egy kérést küld a webszervernek. Ez a kérés lehet blokkoló (szinkron) vagy nem blokkoló (aszinkron). A Node.js eseményvezérelt architektúrát használ, ahol minden beérkező kérés először egy eseménysorba (Event Queue) kerül. Az eseményciklus (Event Loop) folyamatosan figyeli ezt a sort, és sorban dolgozza fel a kéréseket. A működés megértése - Event Queue, Event Loop és Thread Pool - elengedhetetlen a teljesítmény optimalizálásához és a blokkoló műveletek miatti késleltetések elkerüléséhez.
 
-![Kliens és szerver kapcsolat](../assets/backend/nodejs/client_request_handling_1.webp)
+![Kliens és szerver kapcsolat](../../../assets/backend/nodejs/en/client_request_handling_1.webp)
 *Kép: A képen egy kliens és egy szerver közötti kapcsolatot illusztrálnak. A bal oldalon egy emberi alakot ábrázoló ikon látható, aki számítógép előtt ül, piros pólóban. A kliens a "Request" (Kérés) felirattal közvetlen kapcsolatban áll a jobb oldalon elhelyezkedő szerver ikon mellett, amely egy számítógép-szekrényre hasonlít, több réteggel. Az ikonok egyszerűsített stílusban készültek, a háttér világos szürke.*
 
-![Események várakozási sora](../assets/backend/nodejs/client_request_handling_2.webp)
+![Események várakozási sora](../../../assets/backend/nodejs/en/client_request_handling_2.webp)
 *Kép: A képen egy görbe nyíl mutat a "Request" feliratú mezőből egy "Event Queue" felé, amely egy üres, függőleges téglalap formájában van ábrázolva. A "Event Queue" alján egy zöld színű sáv látható, amely az események várakozási állapotát jelzi. A háttér világos színű, és a rajz egyszerű, vonalrajzszerű stílusban készült. A megjelenített elemek közvetlenül kapcsolódnak egy informatikai koncepcióhoz, amely az események kezelésére utal.*
 
-![Eseménykezelés összefoglaló](../assets/backend/nodejs/client_request_handling_3.webp)
+![Eseménykezelés összefoglaló](../../../assets/backend/nodejs/en/client_request_handling_3.webp)
 *Kép: A képen egy eseménykezelést bemutató ábra látható. Az ábra bal oldalán egy "Request" feliratú nyíl mutat a középen elhelyezkedő dobozra, amely az "Event Queue" (esemény sor) feliratot viseli. A doboz alatt több zöld téglalap található, amelyek az események sorát jelzik. A doboz jobb oldalán egy kör alakú nyíl látható, ami az "Event Loop" (esemény ciklus) szimbóluma, az esemény sor és az esemény ciklus közötti kapcsolatot sugallva. Az ábra szürke háttere kontrasztot biztosít a fehér tulajdonságokkal, kiemelve a bemutatott koncepció fontosságát és tisztaságát.*
 
-![Eseményhurok és műveletek](../assets/backend/nodejs/client_request_handling_4.webp)
+![Eseményhurok és műveletek](../../../assets/backend/nodejs/en/client_request_handling_4.webp)
 *Kép: A képen egy eseményhurok (Event Loop) látható, amely egy blokkoló és nem blokkoló műveleteket bemutató ábrázolást tartalmaz. Az eseményhurok középpontjában egy örvénylátható ikon található, amely az események folyamatos ütemezését szimbolizálja. A bal oldalon egy „Request” jelzés utal a beérkező kérésekre, míg a bal alsó részen az „Event Queue” az események várakozó sorát jelöli. A jobb oldalon a „Blocking Operations” és a „Non-Blocking Operations” feliratok különböztetik meg a két műveletcsoportot, kiemelve a hurok működésének különböző aspektusait.*
 
-![Blokkoló műveletek és szálkezelés](../assets/backend/nodejs/client_request_handling_5.webp)
+![Blokkoló műveletek és szálkezelés](../../../assets/backend/nodejs/en/client_request_handling_5.webp)
 *Kép: A képen egy blokkoló működés folyamatábrája látható. Az ábra bal oldalán egy sárga háttérrel kiemelt téma található, ami a "Blocking Operations" feliratot viseli. A folyamat ábrázolja, hogy amikor egy szálra (Worker) van szükség, akkor a következő lépés az, hogy egy munkást (worker) kell kijelölni, és meg kell kezdeni a munkát. Az ábra továbbá jelzi, hogy végül a rendszernek vissza kell adnia az eredményt. A jobb oldalon a "Thread Pool" felirat szerepel, amely üresen áll, jelezve, hogy ott egy szálak gyűjteménye várakozik a feladatok elvégzésére.*
 
 *Forrás: [GeeksforGeeks - JavaScript Tutorial](https://www.geeksforgeeks.org/node-js/how-node-js-works)*
@@ -221,7 +221,7 @@ Hello, Node.js!
 
 Ebben a példában a `fs.readFileSync()` blokkolja a végrehajtást, amíg a fájl teljesen be nem olvasódik. A kód futása megáll ennél a sornál, és csak a fájl tartalmának kiírása után folytatódik a "2" és "3" kiírásával.
 
-[sync.js](../../../examples/nodejs/sync.js)
+[sync.js](../../../code/nodejs/sync.js)
 
 ---
 
@@ -229,13 +229,13 @@ Ebben a példában a `fs.readFileSync()` blokkolja a végrehajtást, amíg a fá
 
 Az aszinkron példában a "2" és "3" már a fájl beolvasása előtt kiírásra kerül, a fájl tartalma csak később jelenik meg, amikor az olvasás befejeződött.
 
-[async.js](../../../examples/nodejs/async.js)
+[async.js](../../../code/nodejs/async.js)
 
 ### Aszinkron fájlolvasás
 
 Az aszinkron fájlolvasás bemutatja, hogyan lehet a Node.js-ben nem blokkoló módon, callback függvény segítségével fájlt olvasni. Ez a működésmód a Node.js egyik legnagyobb előnye, mivel a szerver közben más feladatokat is el tud látni.
 
-[async_file_reading.js](../../../examples/nodejs/async_file_reading.js)
+[async_file_reading.js](../../../code/nodejs/async_file_reading.js)
 
 ---
 

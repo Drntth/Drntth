@@ -15,7 +15,7 @@ Since childhood, I've been fascinated by IT and software development. I hold a B
 
 ## :hammer_and_wrench: Skills
 
-![Technology Stack](assets/technology-stack.png)
+![Technology Stack](assets/readme/en/technology-stack.png)
 
 - **Languages:** Python, C#, Java, JavaScript, SQL, PHP, LaTeX
 - **Technologies:** HTML5, CSS3, Bootstrap, Django, .NET, Spring Boot, Laravel, PostgreSQL, MySQL, SQLite, Docker, GitHub Actions, Bash, PlantUML, VBA, Jupyter Notebook, Trello, Markdown
@@ -27,7 +27,7 @@ Below you can find a curated list of my public and pinned repositories. Each pro
 
 | Project Name | Description | Link |
 | ------------ | ----------- | ---- |
-| thesis-langmodels-project-management | Artificial Intelligence in Web Applications | [View README](./projects/thesis-langmodels-project-management.md) |
+| thesis-langmodels-project-management | Artificial Intelligence in Web Applications | [View README](.) |
 | ... | ... | ... |
 
 ## :mortar_board: Education

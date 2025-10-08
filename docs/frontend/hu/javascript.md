@@ -25,12 +25,12 @@ A JavaScript egy programozási nyelv, amelyet dinamikus webes tartalmak létreho
 
 **Kliens oldalon** a JavaScript együttműködik a HTML-lel és a CSS-sel. A HTML adja a weboldal szerkezetét, a CSS a stílusokat, a JavaScript pedig életre kelti az oldalt: lehetővé teszi a felhasználói interakciókat (gombkattintás, űrlapkitöltés, animációk). A böngésző közvetlenül futtatja a JavaScript kódot.
 
-![Client-side JavaScript](../../../assets/frontend/Client-Side-JavaScript.webp)
+![Client-side JavaScript](../../../assets/frontend/javascript/en/Client-Side-JavaScript.webp)
 *Forrás: [GeeksforGeeks - JavaScript Tutorial](https://www.geeksforgeeks.org/javascript/javascript-tutorial)*
 
 **Szerver oldalon** (pl. Node.js) a JavaScript adatbázisokhoz fér hozzá, fájlokat kezel, biztonsági funkciókat lát el, és válaszokat küld a böngészőknek.
 
-![Server-side JavaScript](../../../assets/frontend/Server-Side-JavaScript.webp)
+![Server-side JavaScript](../../../assets/frontend/javascript/en/Server-Side-JavaScript.webp)
 *Forrás: [GeeksforGeeks - JavaScript Tutorial](https://www.geeksforgeeks.org/javascript/javascript-tutorial)*
 
 ## Alapvető szintaxis
