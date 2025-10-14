@@ -4,11 +4,7 @@
 
 > :uk: English | [:hungary: Magyar](../hu/)
 
----
-
-## Purpose
-
-[Briefly describe the purpose or goal of the technology/topic]
+**Purpose**: [Briefly describe the purpose or goal of the technology/topic]
 
 ---
 
@@ -44,7 +40,7 @@ Other methods...
 
 ## Shortcuts
 
-Any type of useful keyboard shortcuts.
+[Any type of useful keyboard shortcuts.]
 
 ---
 
@@ -61,7 +57,7 @@ Any type of useful keyboard shortcuts.
 
 ## Example Code
 
-You can find example code related to this topic in the [code directory](../../code/).
+[You can find example code related to this topic in the [code directory](../../code/).]
 
 ---
 
@@ -69,3 +65,7 @@ You can find example code related to this topic in the [code directory](../../co
 
 - [Source Name 1]([URL]): [Brief description]
 - [Source Name 2]([URL]): [Brief description]
+
+---
+
+*Last updated at: [2025.10.08.]*
