@@ -57,7 +57,7 @@ Other methods...
 
 ## Example Code
 
-[You can find example code related to this topic in the [code directory](../../code/).]
+[You can find example code related to this topic in the [code directory](../../../code/).]
 
 ---
 
