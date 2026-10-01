@@ -2,7 +2,7 @@
 
 <h1>Tóth Dorina</h1>
 
-<strong>Software Developer</strong> | AI & Backend
+<strong>Szoftverfejlesztő</strong> | AI és Backend
 
 <sub>Magyarország &nbsp;·&nbsp; <a href="README.md">English</a> | Magyar</sub>
 
@@ -14,28 +14,32 @@
 
 ---
 
-Junior AI és szoftverfejlesztő Magyarországról. Python- és SQL-alapú alkalmazásokat, API-szolgáltatásokat és LLM-alapú rendszereket fejlesztek, beleértve a RAG alkalmazásokat, chatbotokat és AI agent megoldásokat. Programtervező informatikus BSc.
+AI és software engineering metszetében dolgozom. Az érdekel, hogyan lehet az AI-technológiákat nemcsak használni, hanem megérteni és megbízható, valódi problémákat megoldó szoftverrendszerekbe integrálni. Programtervező informatikus BSc.
 
 ## Fókuszterületek
 
 </div>
 
-- **AI és gépi tanulás:** LLM-alapú rendszerek, RAG alkalmazások, chatbotok, agentek
-- **Backend és API-k:** API-alapú szolgáltatások, Python- és SQL-alapú alkalmazások
-- **Architektúra és web:** rendszertervezés, webfejlesztés
+- **LLM és GenAI fejlesztés:** LLM-alapú rendszerek, RAG, embeddingek, prompt engineering, fine-tuning, AI agentek
+- **Dokumentumfeldolgozás és NLP:** OCR (Tesseract), AI vision, dokumentumfeldolgozás, NLP, computer vision
+- **Backend és rendszerek:** Python, Django, REST API-k, PostgreSQL, Docker, korlátalapú optimalizálás
 
 <div align="center">
 
 ## Technológiák
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
 
 ## Projektek
 
-| Projekt                                                                                                | Leírás                                                                              | Stack                      |
-| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | -------------------------- |
-| [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | Webalkalmazás kisebb nyelvi modellekkel támogatott projektdokumentáció-generáláshoz | `Python` `Django` `SQLite` |
+| Projekt                                                                                                | Leírás                                                                                                | Stack                                               |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | BSc szakdolgozat: webalkalmazás kisebb nyelvi modellekkel támogatott projektdokumentáció-generáláshoz | `Python` `Django` `Hugging Face` `Docker` `Cypress` |
 
-További projektek és részletek: **[drntth.github.io](https://drntth.github.io/)**
+Projektek, technológiai jegyzetek, kutatás és tanúsítványok: **[drntth.github.io](https://drntth.github.io/)**
 
 </div>
