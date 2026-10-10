@@ -39,6 +39,7 @@ I work at the intersection of AI and software engineering. I am interested in no
 | Project                                                                                                | Description                                                                                             | Stack                                               |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | BSc thesis: web application for AI-assisted project documentation generation with small language models | `Python` `Django` `Hugging Face` `Docker` `Cypress` |
+| [yaml-latex-cv-generator](https://github.com/Drntth/yaml-latex-cv-generator)                           | Bilingual CV and cover letter generator: YAML content, Jinja2 and LaTeX templates, reproducible PDFs    | `Python` `Jinja2` `LaTeX` `YAML` `pytest`           |
 
 Projects, technology notes, research and certificates: **[drntth.github.io](https://drntth.github.io/)**
 
