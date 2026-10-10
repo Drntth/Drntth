@@ -36,10 +36,11 @@ I work at the intersection of AI and software engineering. I am interested in no
 
 ## Projects
 
-| Project                                                                                                | Description                                                                                             | Stack                                               |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | BSc thesis: web application for AI-assisted project documentation generation with small language models | `Python` `Django` `Hugging Face` `Docker` `Cypress` |
-| [yaml-latex-cv-generator](https://github.com/Drntth/yaml-latex-cv-generator)                           | Bilingual CV and cover letter generator: YAML content, Jinja2 and LaTeX templates, reproducible PDFs    | `Python` `Jinja2` `LaTeX` `YAML` `pytest`           |
+| Project                                                                                                | Description                                                                                                | Stack                                               |
+| ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | BSc thesis: web application for AI-assisted project documentation generation with small language models    | `Python` `Django` `Hugging Face` `Docker` `Cypress` |
+| [yaml-latex-cv-generator](https://github.com/Drntth/yaml-latex-cv-generator)                           | Bilingual CV and cover letter generator: YAML content, Jinja2 and LaTeX templates, reproducible PDFs       | `Python` `Jinja2` `LaTeX` `YAML` `pytest`           |
+| [static-multisite-generator](https://github.com/Drntth/static-multisite-generator)                     | Several static websites from one source: shared templates, image optimization, SEO files, FTP change lists | `Python` `Jinja2` `Pillow` `Bootstrap` `Apache`     |
 
 Projects, technology notes, research and certificates: **[drntth.github.io](https://drntth.github.io/)**
 

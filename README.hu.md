@@ -40,6 +40,7 @@ AI és software engineering metszetében dolgozom. Az érdekel, hogyan lehet az 
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | [thesis-langmodels-project-management](https://github.com/Drntth/thesis-langmodels-project-management) | BSc szakdolgozat: webalkalmazás kisebb nyelvi modellekkel támogatott projektdokumentáció-generáláshoz   | `Python` `Django` `Hugging Face` `Docker` `Cypress` |
 | [yaml-latex-cv-generator](https://github.com/Drntth/yaml-latex-cv-generator)                           | Kétnyelvű CV- és motivációslevél-generátor: YAML-tartalom, Jinja2 és LaTeX sablonok, reprodukálható PDF | `Python` `Jinja2` `LaTeX` `YAML` `pytest`           |
+| [static-multisite-generator](https://github.com/Drntth/static-multisite-generator)                     | Több statikus weboldal egy forrásból: közös sablonok, képoptimalizálás, SEO-fájlok, FTP-változáslista   | `Python` `Jinja2` `Pillow` `Bootstrap` `Apache`     |
 
 Projektek, technológiai jegyzetek, kutatás és tanúsítványok: **[drntth.github.io](https://drntth.github.io/)**
 
